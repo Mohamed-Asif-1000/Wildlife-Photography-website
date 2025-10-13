@@ -1,0 +1,1019 @@
+
+/*Sets a universal reset and base styles for the body. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+/* Base body styles using flexbox for a sticky footer effect */
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex; /* Make the body a flex container */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+}
+/* A main wrapper to contain all content except the footer, allowing it to grow and push the footer down */
+.main-wrapper {
+    flex: 1; /* This will make the main-wrapper grow and push the footer down */
+    display: flex;
+    flex-direction: column;
+}
+/* Styles for various content sections, providing padding and setting dimensions */
+.content2, .content3, .content4, .content5, .content6, .content7 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px 0; /* Add vertical padding for spacing */
+
+}
+/* General container styles for sections with a background */
+.background2, .background3, .background4, .background7 {
+    width: 96%;
+    margin: 20px auto; /* Use auto margin to center the containers */
+    padding: 20px;
+    height: auto; /* Allow height to adjust based on content */
+    border-radius: 10px;
+}
+/* NAVIGATION BAR STYLES
+  Mobile-first styling for the fixed navigation bar.
+ */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    opacity: 0.64;
+}
+/* Container for the logo and text within the navbar */
+.navbar .logosection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Add space between logo and menu */
+}
+/* Styling for the logo image */
+.navbar .logosection .menulogo{
+    margin-top: 10px;
+    width:60px;
+    height: 70px;
+    background-position: center;
+    background-image: url(/images/logo6.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/* Styling for the logo text */
+.navbar .logosection .logotext{
+    margin-top: 10px;
+    font-size: 35px;
+    font-family: 'Koh Santepheap';
+    font-weight:600;
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+/* Styles for the navigation links in the menu */
+
+.menutext ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+.menutext li a{
+    font-size: 25px;
+    font-family: 'Koh Santepheap';
+    font-weight: 600;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+    position: relative;
+    display: block;
+}
+/* Creates the underline effect on hover for the menu links */
+
+.menutext li a::after{
+    content: "";
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 3px;
+    bottom: 5px;
+}
+.menutext li a:hover::after{
+    width: 100%;
+}
+/* Media query for tablet and desktop navigation (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menutext ul {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .menutext li a::after {
+      left: 0;
+      transform: none;
+    }
+}
+/* MAIN CONTENT (HERO SECTION) STYLES
+ Sets up the main full-screen hero section with a background image.*/
+.maincontent {
+    position: relative;
+    width: 100%;
+    /* Use 100vh to make it fill the entire viewport height */
+    height: 100vh;
+    background-image: url(/images/rhino.jpg);
+    background-size: cover;
+    background-position:top; /* Use center for better cropping on mobile */
+    display: flex; /* Use flexbox to center content */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; /* Add padding to prevent content from going under the fixed navbar */
+}
+/* Styles for the search bar container */
+
+.maincontent .contentsearch {
+    width: 100%; /* Use percentage width */
+    max-width: 400px; /* Set a max-width to prevent it from getting too large */
+}
+/* Container for the search form to correctly position the icon */
+
+.search-form-container {
+    position: relative;
+}
+.maincontent .contentsearch .searchtab{
+    width: 100%; /* Make search bar take full width of its container */
+    height: 50px;
+    border-radius: 60px;
+    font-size: 22px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding:20px;
+    border: none;
+    outline: 2px solid rgb(4, 44, 4);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.maincontent .searchtab::placeholder{
+    color:rgb(2, 48, 2);
+}
+/* Styles for the search icon positioned inside the search bar */
+
+.maincontent .contentsearch .search-icon{
+    position: absolute; /* Keep icon positioned absolutely relative to the form */
+    right: 20px; /* Adjusted right position */
+    top: 50%; /* Adjusted top to center vertically */
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: rgba(14, 54, 7, 0.918);
+    cursor: pointer;
+}
+/*CONTENT SECTION 2 (HORNBILL) STYLES
+ Mobile-first layout for the hornbill section.*/
+.content2{
+    padding: 40px 0;
+    background-color: #2C2C2C; /* Dark charcoal for contrast */
+}
+.content2 .background2{
+    width: 90%; /* Use percentage width for responsiveness */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding inside the container */
+    height: auto; /* Allow height to adjust based on content */
+    border-radius: 10px;
+    background-color: rgba(250, 245, 235, 0.938);
+}
+/* Flexbox container to arrange the paragraph and images */
+.content2 .background2 .boxcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    
+}
+/* Styles for the heading in this section */
+
+.content2 .background2 .heading1 {
+    font-size: 30px; /* Adjust font size for mobile */
+    font-family: 'Kaushan Script';
+    text-align: center;
+    color: rgb(9, 61, 9);
+    border-bottom: 2px solid #4A3F2E;
+    padding-bottom: 5px;
+    margin: 0 auto 20px; /* Center the element using auto margins */
+    width: fit-content; /* Make the border only as wide as the text */
+}
+.content2 .background2 .heading1 .highlightbird{
+    color: #A62828; /* Rich hornbill beak red */
+}
+.content2 .background2 .boxcontainer{
+    position: relative;
+    display: flex;
+    top: 40px;
+    left: 30px;
+    right: 40px;
+    flex-direction: row;
+    width: 95%;
+    height: 500px;
+}
+/* Styles for the text paragraph */
+.content2 .background2 .boxcontainer .paragraph {
+    font-size: 16px; /* Adjust font size for mobile readability */
+    text-align: justify;
+    color: rgba(29, 28, 28, 0.973);
+    padding: 0 10px; /* Add side padding */
+}
+/* Styles for the image container, stacking images on mobile */
+.content2 .background2 .boxcontainer .imagecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+/* Background images for the hornbill section */
+
+.content2 .background2 .topimage{
+    background-image: url(/images/hornbill1.jpg);
+}
+.content2 .background2 .bottomimage1{
+    background-image: url(/images/hornbill2.jpg);
+}
+.content2 .background2 .bottomimage2{
+    background-image: url(/images/hornbill3.jpg);
+}
+/* General styles for all images in this section, making them responsive */
+.content2 .background2 .topimage,
+.content2 .background2 .bottomimage1,
+.content2 .background2 .bottomimage2 {
+    position: static; /* Remove absolute positioning */
+    width: 90%; /* Use percentage width to scale with container */
+    height: 200px; /* A consistent height, but could also be `auto` */
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px black;
+    transition: transform 0.2s ease-in-out;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.topimage:hover,.bottomimage1:hover,.bottomimage2:hover{
+    transform: scale(1.05);
+}
+/* Tablet styles (768px - 1023px) for content2 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .content2 .background2 .boxcontainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        height: auto;
+        top: 0px;
+    }
+    .content2 .background2{
+        height: auto;
+    }
+
+    .content2 .background2 .boxcontainer .paragraph {
+
+        width: 100%;
+        order: 1;   
+    }
+
+    .content2 .background2 .boxcontainer .imagecontainer {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        order: 2;
+    }
+    .content2 .background2 .topimage,
+    .content2 .background2 .bottomimage1,
+    .content2 .background2 .bottomimage2 {
+        width: 30%;
+        height: 200px;
+    }
+}
+
+/* Desktop styles (1024px+) for content2 */
+@media screen and (min-width: 1024px) {
+    .content2 .background2 .heading1 {
+        font-size: 30px;
+        text-align: left;
+    }
+    .content2 .background2 .boxcontainer {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .content2 .background2 .boxcontainer .paragraph {
+        flex: 1;
+        padding: 0 30px;
+    }
+    .content2 .background2 .boxcontainer .imagecontainer {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex: 1;
+        position: relative;
+    }
+
+    .content2 .background2 .topimage,
+    .content2 .background2 .bottomimage1,
+    .content2 .background2 .bottomimage2 {
+        position: absolute;
+        width: 300px;
+        height: 250px;
+    }
+    .content2 .background2 .topimage { top: 10px; left: 25px; }
+    .content2 .background2 .bottomimage1 { top: 200px; left: 0; }
+    .content2 .background2 .bottomimage2 { top: 100px; left: 250px; width: 270px; }
+}
+/*CONTENT SECTION 3 (WILDLIFE ON THE EDGE) STYLES
+ Mobile-first styles for the image showcase section.*/
+
+.content3{
+    background-color: #c1c1c9;
+}
+.content3 .background3{
+    background-color: rgba(250, 245, 235, 0.938); /* Soft warm cream */
+}
+.content3 .background3 .heading2{
+    font-size: 35px;
+    font-family:'Kaushan Script';
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color: rgb(8, 51, 8);
+    border-bottom: 3px solid rgb(70, 61, 23);
+    text-align: center;
+    margin: 0 auto 20px;
+    width: fit-content;
+}
+/* Flexbox container for the images in this section */
+
+.content3 .background3 .imagecontainer2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    height: auto;
+}
+/* Styles for individual images in the container */
+
+.content3 .background3 .image1{
+    position: static;
+    margin-top: 100px;
+    width:80%;
+    height: 250px;
+    background-image: url(/images/tamarin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.content3 .background3 .image2{
+    position: static;
+    margin-top: 50px;
+    width:90%;
+    height: 250px;
+    background-image: url(/images/lion.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.content3 .background3 .image3{
+    position: static;
+    width:90%;
+    height: 250px;
+    background-image: url(/images/panther.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.content3 .background3 .image4{
+    position: static;
+    margin-top: 50px;
+    width:90%;
+    height: 250px;
+    background-image: url(/images/polarbear.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.content3 .background3 .image5{
+    position: static;
+    margin-top: 100px;
+    width:80%;
+    height: 250px;
+    background-image: url(/images/thar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+/* Hover effect for the images */
+
+.image1:hover,.image2:hover,.image3:hover,.image4:hover,.image5:hover{
+    transform: scale(1.05);
+}
+/* Tablet styles for content3 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .content3 .background3 .imagecontainer2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .content3 .background3 .imagecontainer2 > div {
+        width: 45%;
+    }
+}
+
+/* Desktop styles for content3 */
+@media screen and (min-width: 1024px) {
+    .content3 .background3 .heading2 {
+      font-size: 35px;
+    }
+    .content3 .background3 .imagecontainer2 {
+        flex-direction: row;
+        height: 600px;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .content3 .background3 .imagecontainer2 > div {
+        position: static;
+        flex: 1;
+        width: auto;
+    }
+    .content3 .background3 .image1 { top: 100px; height: 350px; }
+    .content3 .background3 .image2 { top: 60px; height: 450px; }
+    .content3 .background3 .image3 { top: 20px; height: 550px; }
+    .content3 .background3 .image4 { top: 60px; height: 450px; }
+    .content3 .background3 .image5 { top: 100px; height: 350px; }
+}
+/*CONTENT SECTION 4 (GALLERY) STYLES
+Uses CSS Grid for a responsive image gallery.*/
+.content4{
+    height: auto;
+    background-color: #86868d;
+    padding: 20px 0px;    
+}
+.content4 .background4{
+    background-color: rgba(250, 245, 235, 0.938);
+    height: auto;
+    padding: 20px;
+    width: 96%;
+}
+.content4 .background4 .heading2{
+    font-size: 35px; /* Adjust font size for mobile */
+    font-family: 'Kaushan Script';
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(9, 61, 9);
+    border-bottom: 2px solid #4A3F2E;
+    padding-bottom: 5px;
+    margin: 0 auto 20px; /* Center the element using auto margins */
+    width: fit-content; /* Make the border only as wide as the text */
+}
+.gallery-container {
+    width: 100%;
+    height: auto;
+    margin: 20px auto 0 auto;
+            
+}
+/* The core CSS Grid layout for the gallery */
+.image-grid {
+    display: grid;
+    /* Creates a fluid grid that fits as many columns as possible
+    Each column will have a minimum size of 150px and a maximum of 1fr (equal share) */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));        
+    /* This sets a base row height. Images spanning multiple rows will use a multiple of this value. */
+    grid-auto-rows: 150px; 
+    /* This is the key property for the "masonry" effect.
+    It tells the browser to fill any empty spaces with subsequent items. */
+    grid-auto-flow: dense;
+    /* The 10px gap between all grid items */
+    gap: 10px;
+}
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+/* ---- Media Queries for a more controlled, multi-column layout ---- */
+/* For screens 640px and wider, create at least 2 columns */
+        @media (min-width: 640px) {
+        .image-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        }/* For screens 768px and wider, create at least 3 columns */
+        @media (min-width: 768px) {
+        .image-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        }
+
+        /* For screens 1024px and wider, create at least 4 columns */
+        @media (min-width: 1024px) {
+            .image-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+        /* Styling for each image item container */
+        .image-item {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .image-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Custom classes to make images span multiple rows and columns */
+        .span-2-row {
+            grid-row: span 2;
+        }
+
+        .span-2-col {
+            grid-column: span 2;
+        }
+        
+        .span-2-grid {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+        
+        /* Define your image URLs here. You can replace the placeholder URLs with your own. */
+        .img1 { background-image: url("/images/bird1.jpg"); }
+        .img2 { background-image: url("/images/polarbear2.jpg"); }
+        .img3 { background-image: url("/images/panther3.jpg"); }
+        .img4 { background-image: url("/images/thar4.jpg"); }
+        .img5 { background-image: url("/images/giraffe5.jpg"); }
+        .img6 { background-image: url("/images/bird6.jpg"); }
+        .img7 { background-image: url("/images/monkey7.jpg"); }
+        .img8 { background-image: url("/images/penguin8.jpg"); }
+        .img9 { background-image: url("/images/redpanda9.jpg"); }
+        .img10 { background-image: url("/images/hedge10.jpg"); }
+        .img11 { background-image: url("/images/husky11.jpg"); }
+  .img5{
+    background-position: top;
+    background-size: cover;
+  }
+  .img9{
+    background-position: top;
+    background-size: cover;
+  }
+  .img6{
+    background-position: top;
+    background-size: cover;
+}
+/*CONTENT SECTION 6 (JOIN US) STYLES
+Mobile-first styling for the form section with an image.*/
+.content6{
+    background-color: #2C2C2C;
+}
+
+.box-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+    height: auto;
+    margin: 20px auto;
+    padding:10px;
+}
+/* Styles for the image container next to the form */
+
+.box-image{
+    width:90%;
+    height: 300px;
+    background-color: white;
+    border-radius: 15px;
+    background-image:url(/images/tiger.jpg);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+/* Styles for the form container */
+
+.box-form{
+    width: 90%;
+    height: auto;
+    background-color:#1a1a1a;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.box-form .join-form{
+    display: flex;
+    justify-content:left;
+    align-content: left;
+    padding: 50px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+.join-form h3{
+    font-size: 35px;
+    font-family: 'Jua';
+    font-weight: bold;
+    text-align:center;
+    letter-spacing: 2px;
+    color: #ffcc33;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px black;
+}
+/* Flexbox containers for form inputs to organize them */
+
+.name-contact-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.fullname{
+    width: 100%;
+    height: 40px;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: 1px solid #ffcc33;
+    border: none;
+}
+.contact-no{
+    width: 100%;
+    height: 40px;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: 1px solid #ffcc33;
+    border: none;
+}
+.email-location-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.email{
+    width: 100%;
+    height: 40px;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: 1px solid #ffcc33;
+    border: none;
+}
+.location{
+    width: 100%;
+    height: 40px;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: 1px solid #ffcc33;
+    border: none;
+}
+.description{
+    width: 100%;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: 1px solid #ffcc33;
+    border: none;
+}
+/* General styles for form input fields */
+
+.fullname,.contact-no,.email,.location,.description{
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-family:'Roboto';
+    background-color:#222;
+    font-weight: 500;
+    padding:0px 0px 0px 10px;
+}
+.fullname::placeholder,.contact-no::placeholder,.email::placeholder,.location::placeholder,.description::placeholder{
+   color:#fff; 
+   font-weight:400;
+   padding: 10px;
+}
+/* Styles for the submit button */
+
+.submit-button{
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: 1px solid rgb(88, 28, 10);
+    font-size: 18px;
+    font-family: 'Oswald';
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    color:#111;
+    background-color:#ffcc33;
+    box-shadow: 2px 2px 3px rgb(77, 21, 1);
+    cursor: pointer;
+}
+/* Tablet styles for join form */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .box-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .box-image {
+        top: 0px;
+        padding-top: 0px;
+        width: 45%;
+        height: 600px;
+    }
+    .box-form {
+        top: 0;
+        width: 45%;
+        height: auto;
+    }
+    .name-contact-container, .email-location-container {
+        flex-direction: column;
+    }
+}
+
+/* Desktop styles for join form */
+@media screen and (min-width: 1024px) {
+    .box-container {
+        flex-direction: row;
+        height: auto;
+    }
+    .box-image {
+        width: 500px;
+        height: 550px;
+    }
+    .box-form {
+        width: 750px;
+        height: 550px;
+    }
+    .join-form h3 {
+        font-size: 35px;
+        text-align: left;
+    }
+    .name-contact-container, .email-location-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .fullname, .contact-no, .email, .location {
+        width: 300px;
+    }
+}
+
+/*CONTENT SECTION 5 (VIDEOS) STYLES
+Uses CSS Grid for a video showcase.*/
+.content5{
+    background-color: #545458;  
+}
+.content5 .background5{
+    background-color: rgba(250, 245, 235, 0.938);
+    height: auto;
+    padding: 60px;
+    margin: 20px  auto;
+    border-radius: 10px;
+    width: 96%;
+}
+.content5 .background5 .heading3{
+    font-size: 35px;
+    font-family:'Kaushan Script';
+    font-weight: bolder;
+    color: rgb(8, 51, 8); /* Deep forest green */
+    border-bottom: 3px solid #4A3F2E; /* Earthy brown */
+    letter-spacing: 2px;
+    margin: 0 auto;
+    padding: 0px 0px 5px 0px;
+    text-align: left;
+    width: fit-content;
+}
+/* CSS Grid layout for the video showcase */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin:50px auto;
+}
+.video-item video {
+    width: 100%;
+    height:auto;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.video-item video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+/* Tablet styles for videos */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop styles for videos */
+@media screen and (min-width: 1024px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .video-item video {
+        width: 550px;
+        height:300px;
+    }
+}
+
+/*FOOTER STYLES
+ Sets up the footer section with contact information and social links.*/
+.content7{
+    background-color: #201f1f;
+    background-image: url(/images/zebras.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+/* Container for the footer content, positioned at the bottom */
+
+.footer-container{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+/* Flexbox container for the different columns in the footer */
+
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    gap: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.column-1, .column-2, .column-3, .column-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Kameron';
+    letter-spacing: 3px;
+    font-size: 18px;
+    padding: 20px;
+}
+.column-1 {
+    text-align: left;
+    align-items: flex-start; 
+}
+.contact, .follow, .services, .about {
+    font-family: 'Kameron';
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffcc33;
+}
+/* Styles for the social media icons */
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: flex-start;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a i {
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: #ffcc33;
+}
+/* Styles for the copyright text */
+
+.footer{
+    font-family: 'Kameron';
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+/* Media queries for footer layout on larger screens */
+
+@media screen and (min-width: 768px) {
+    .contact-section {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .column-2, .column-3, .column-4 {
+        align-items: center;
+    }
+    .social-icons {
+        align-items: flex-start;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .contact-section {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align:center;
+    }
+    .column-2, .column-3, .column-4 {
+        align-items: center;
+    }
+}
+
+
+
+/* Ensures full width for specific sections */
+#about-section {
+  width: 100%;   /* forces full page width */
+  max-width: 100%; 
+  margin: 0 auto; /* centers content if needed */
+}
+#gallery-section {
+  width: 100%;   /* forces full page width */
+  max-width: 100%; 
+  margin: 0 auto; /* centers content if needed */
+}
+#join-section {
+  width: 100%;   /* forces full page width */
+  max-width: 100%; 
+  margin: 0 auto; /* centers content if needed */
+
+}
+ 
+
+
+
+
+
