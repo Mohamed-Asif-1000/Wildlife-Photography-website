@@ -7,6 +7,14 @@
 
 ---
 
+## 📝 About This README
+
+This `README.md` file serves as documentation for the **Wildlife Photography Website** project.  
+It explains the website’s features, folder structure, technologies used, and how to run or modify the project.  
+If you are browsing this repository on GitHub or another platform, this document helps you understand the project purpose and setup quickly.
+
+---
+
 ## 🌟 Overview
 This is a responsive wildlife-themed website designed to showcase animals through **images**, **videos**, **galleries**, and a **join form**. The website is fully built using **HTML5** and **CSS3**, utilizing **Flexbox** and **CSS Grid** to create a modern, responsive design that works across all devices.
 
@@ -43,15 +51,11 @@ This is a responsive wildlife-themed website designed to showcase animals throug
 ---
 
 ## 📂 Folder Structure
-
-project-root/
-├─ index.html
-├─ css/
-│ └─ style.css
-├─ images/
-├─ videos/
-└─ README.md
-
+- **index.html** - The Main HTML file for the Project.
+- **style.css**  - Contains stylesheet for the Project.
+- **images**     - Directory for Images Used in the Project.
+- **videos**     - Directory for Videos Used in the Project.
+- **README.md**  - Documentation for Understanding the Project.
 
 ---
 
@@ -59,39 +63,58 @@ project-root/
 
 1.Clone the repository:
 ```bash
+
 git clone https://github.com/yourusername/wildlife-website.git
 
-2. Navigate to the Project Folder
+```
+
+2.Navigate to the Project Folder
+```bash
 
 cd wildlife-website
 
-3. Open index.html in your preferred web browser.
+```
+
+3.Open index.html in your preferred web browser.
 
 ---
 
-📌 Usage
+## 📌 Usage
 
-View Animals: Explore different wildlife sections with images and videos.
+-**View Animals**: Explore different wildlife sections with images and videos.
 
-Gallery & Videos: Enjoy interactive and responsive layouts.
+-**Gallery & Videos**: Enjoy interactive and responsive layouts.
 
-Join Form: Submit your details using the form.
+-**Join Form**: Submit your details using the form.
 
-Navigation: Use the responsive menu to quickly move between sections.
+-**Navigation**: Use the responsive menu to quickly move between sections.
 
 ---
-📝 License
+
+## 📝 License
 
 This project is licensed under the MIT License.
-See the LICENSE file for details.
+See the [LICENSE](LICENSE) file for details.
+
 ---
 
-🙏 Acknowledgements
+## 🙏 Acknowledgements
 
 Inspired by various wildlife conservation efforts and resources.
 
 ---
-👤 Author
+
+## 📷 Media Credits
+
+All Media Used in the Project are free-to-use resources from : 
+- **Unsplash** - For Wildlife Photographs and Videos
+- **Pixabay**  - For Wildlife Photographs and Videos
+
+Full credit goes to the respective photographers and creators for sharing their work publicly.
+
+---
+
+## 👤 Author
 
 Mohamed Asif A
 Wildlife Enthusiast & Front-End Developer
