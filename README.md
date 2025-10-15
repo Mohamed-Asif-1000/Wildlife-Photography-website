@@ -81,13 +81,13 @@ cd wildlife-website
 
 ## 📌 Usage
 
--**View Animals**: Explore different wildlife sections with images and videos.
+- **View Animals**    : Explore different wildlife sections with images and videos.
 
--**Gallery & Videos**: Enjoy interactive and responsive layouts.
+- **Gallery & Videos**: Enjoy interactive and responsive layouts.
 
--**Join Form**: Submit your details using the form.
+- **Join Form**       : Submit your details using the form.
 
--**Navigation**: Use the responsive menu to quickly move between sections.
+- **Navigation**      : Use the responsive menu to quickly move between sections.
 
 ---
 
@@ -117,4 +117,6 @@ Full credit goes to the respective photographers and creators for sharing their 
 ## 👤 Author
 
 Mohamed Asif A
+
+
 Wildlife Enthusiast & Front-End Developer
