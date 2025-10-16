@@ -1,4 +1,3 @@
-
 /*Sets a universal reset and base styles for the body. */
 * {
     margin: 0;
@@ -16,9 +15,7 @@ body {
 }
 /* A main wrapper to contain all content except the footer, allowing it to grow and push the footer down */
 .main-wrapper {
-    flex: 1; /* This will make the main-wrapper grow and push the footer down */
-    display: flex;
-    flex-direction: column;
+    flex: 1 0 auto; /* This will make the main-wrapper grow and push the footer down */
 }
 /* Styles for various content sections, providing padding and setting dimensions */
 .content2, .content3, .content4, .content5, .content6, .content7 {
@@ -41,7 +38,7 @@ body {
  */
 .navbar {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack logo and menu vertically on mobile */
     height: auto;
     padding: 10px 20px;
     position: fixed;
@@ -59,13 +56,13 @@ body {
     justify-content: center;
     margin-bottom: 10px; /* Add space between logo and menu */
 }
-/* Styling for the logo image */
+/* Styling for the logo image (set as a background image) */
 .navbar .logosection .menulogo{
     margin-top: 10px;
     width:60px;
     height: 70px;
     background-position: center;
-    background-image: url(/images/logo6.png);
+    background-image: url(images/logo6.png);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -84,7 +81,7 @@ body {
 
 .menutext ul{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack links vertically on mobile */
     text-align: center;
     list-style: none;
     padding: 0;
@@ -100,7 +97,7 @@ body {
     position: relative;
     display: block;
 }
-/* Creates the underline effect on hover for the menu links */
+/* Creates the underline effect on hover for the menu links (initial state: zero width) */
 
 .menutext li a::after{
     content: "";
@@ -108,29 +105,29 @@ body {
     transition: width 0.2s ease-in-out;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Center the underline on mobile */
     width: 0px;
     height: 3px;
     bottom: 5px;
 }
 .menutext li a:hover::after{
-    width: 100%;
+    width: 100%; /* Expands to full width on hover */
 }
 /* Media query for tablet and desktop navigation (min-width: 768px) */
 @media screen and (min-width: 768px) {
     .navbar {
-        flex-direction: row;
+        flex-direction: row; /* Layout logo and menu horizontally */
         height: 80px;
         justify-content: space-between;
         align-items: center;
     }
     .menutext ul {
-        flex-direction: row;
+        flex-direction: row; /* Links in a row */
         gap: 20px;
     }
     .menutext li a::after {
       left: 0;
-      transform: none;
+      transform: none; /* Align underline to the left edge on desktop */
     }
 }
 /* MAIN CONTENT (HERO SECTION) STYLES
@@ -140,7 +137,7 @@ body {
     width: 100%;
     /* Use 100vh to make it fill the entire viewport height */
     height: 100vh;
-    background-image: url(/images/rhino.jpg);
+    background-image: url(images/rhino.jpg);
     background-size: cover;
     background-position:top; /* Use center for better cropping on mobile */
     display: flex; /* Use flexbox to center content */
@@ -169,7 +166,7 @@ body {
     padding:20px;
     border: none;
     outline: 2px solid rgb(4, 44, 4);
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
 }
 .maincontent .searchtab::placeholder{
     color:rgb(2, 48, 2);
@@ -197,16 +194,18 @@ body {
     padding: 20px; /* Add padding inside the container */
     height: auto; /* Allow height to adjust based on content */
     border-radius: 10px;
-    background-color: rgba(250, 245, 235, 0.938);
+    background-color: rgba(250, 245, 235, 0.938); /* Soft background */
 }
 /* Flexbox container to arrange the paragraph and images */
 .content2 .background2 .boxcontainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack paragraph and images vertically on mobile */
     align-items: center;
     gap: 20px;
     width: 100%;
     height: auto;
+    padding: 10px;
+    box-sizing: border-box;
     
 }
 /* Styles for the heading in this section */
@@ -224,125 +223,118 @@ body {
 .content2 .background2 .heading1 .highlightbird{
     color: #A62828; /* Rich hornbill beak red */
 }
-.content2 .background2 .boxcontainer{
-    position: relative;
-    display: flex;
-    top: 40px;
-    left: 30px;
-    right: 40px;
-    flex-direction: row;
-    width: 95%;
-    height: 500px;
-}
-/* Styles for the text paragraph */
-.content2 .background2 .boxcontainer .paragraph {
-    font-size: 16px; /* Adjust font size for mobile readability */
-    text-align: justify;
-    color: rgba(29, 28, 28, 0.973);
-    padding: 0 10px; /* Add side padding */
-}
-/* Styles for the image container, stacking images on mobile */
-.content2 .background2 .boxcontainer .imagecontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-}
-/* Background images for the hornbill section */
-
+/* Background image assignments for Hornbill images */
 .content2 .background2 .topimage{
-    background-image: url(/images/hornbill1.jpg);
+    background-image: url(images/hornbill1.jpg);
 }
 .content2 .background2 .bottomimage1{
-    background-image: url(/images/hornbill2.jpg);
+    background-image: url(images/hornbill2.jpg);
 }
 .content2 .background2 .bottomimage2{
-    background-image: url(/images/hornbill3.jpg);
+    background-image: url(images/hornbill3.jpg);
 }
-/* General styles for all images in this section, making them responsive */
+/* Paragraph styling */
+.content2 .background2 .boxcontainer .paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    color: rgba(29, 28, 28, 0.98);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Image container (stacked on mobile) */
+.content2 .background2 .boxcontainer .imagecontainer {
+    display: flex;
+    flex-direction: column; /* Stack images vertically on mobile */
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Images styling (common styles) */
 .content2 .background2 .topimage,
 .content2 .background2 .bottomimage1,
 .content2 .background2 .bottomimage2 {
-    position: static; /* Remove absolute positioning */
-    width: 90%; /* Use percentage width to scale with container */
-    height: 200px; /* A consistent height, but could also be `auto` */
-    border-radius: 15px;
-    box-shadow: 2px 2px 6px black;
-    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 400px; 
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
 }
-.topimage:hover,.bottomimage1:hover,.bottomimage2:hover{
-    transform: scale(1.05);
+
+/* Hover effect */
+.content2 .background2 .topimage:hover,
+.content2 .background2 .bottomimage1:hover,
+.content2 .background2 .bottomimage2:hover {
+    transform: scale(1.03);
 }
-/* Tablet styles (768px - 1023px) for content2 */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+/* ==== Tablet Layout (min-width: 600px) ==== */
+@media screen and (min-width: 600px) and (max-width: 899px) {
     .content2 .background2 .boxcontainer {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        height: auto;
-        top: 0px;
+        flex-direction: column; /* Still stacked but gap adjusted */
+        gap: 25px;
     }
-    .content2 .background2{
-        height: auto;
-    }
-
     .content2 .background2 .boxcontainer .paragraph {
-
-        width: 100%;
-        order: 1;   
+        font-size: 17px;
     }
-
-    .content2 .background2 .boxcontainer .imagecontainer {
-        flex-direction: row;
+    .content2 .background2 .imagecontainer {
+        flex-direction: row; /* Images side-by-side in a row on tablet */
         justify-content: center;
-        width: 100%;
-        order: 2;
+        gap: 15px;
     }
     .content2 .background2 .topimage,
     .content2 .background2 .bottomimage1,
     .content2 .background2 .bottomimage2 {
-        width: 30%;
-        height: 200px;
+        height: 180px;
+        max-width: 180px;
     }
 }
 
-/* Desktop styles (1024px+) for content2 */
-@media screen and (min-width: 1024px) {
-    .content2 .background2 .heading1 {
-        font-size: 30px;
+/* ==== Desktop Layout (min-width: 900px) ==== */
+@media screen and (min-width: 900px) {
+    .content2 .background2 .boxcontainer {
+        flex-direction: row; /* Paragraph and image container side-by-side */
+        align-items: flex-start;
+        gap: 40px;
+    }
+    .content2 .background2 .boxcontainer .paragraph {
+        flex: 1 1 60%; /* Paragraph takes up 60% of the space */
+        font-size: 18px;
         text-align: left;
     }
-    .content2 .background2 .boxcontainer {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 20px;
+    /* Images column setup for overlapping effect */
+    .content2 .background2 .imagecontainer {
+        flex: 0 0 500px; /* Image container has a fixed width of 500px */
+        position: relative; /* container for absolute positioning of images */
+        height: 500px; /* fixed height for the overlap space */
     }
-    .content2 .background2 .boxcontainer .paragraph {
-        flex: 1;
-        padding: 0 30px;
-    }
-    .content2 .background2 .boxcontainer .imagecontainer {
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-start;
-        flex: 1;
-        position: relative;
-    }
-
-    .content2 .background2 .topimage,
-    .content2 .background2 .bottomimage1,
-    .content2 .background2 .bottomimage2 {
+    /* Absolute positioning for overlapping images */
+    .content2 .background2 .topimage {
         position: absolute;
+        top: 0;
+        left: 25px;
         width: 300px;
         height: 250px;
     }
-    .content2 .background2 .topimage { top: 10px; left: 25px; }
-    .content2 .background2 .bottomimage1 { top: 200px; left: 0; }
-    .content2 .background2 .bottomimage2 { top: 100px; left: 250px; width: 270px; }
+    .content2 .background2 .bottomimage1 {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        width: 250px;
+        height: 250px;
+    }
+    .content2 .background2 .bottomimage2 {
+        position: absolute;
+        top: 100px;
+        left: 250px;
+        width: 270px;
+        height: 250px;
+    }
 }
 /*CONTENT SECTION 3 (WILDLIFE ON THE EDGE) STYLES
  Mobile-first styles for the image showcase section.*/
@@ -368,73 +360,58 @@ body {
 
 .content3 .background3 .imagecontainer2{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack vertically on mobile */
     align-items: center;
     gap: 15px;
     width: 100%;
     height: auto;
 }
-/* Styles for individual images in the container */
+/* Styles for individual images in the container (common base) */
 
-.content3 .background3 .image1{
-    position: static;
-    margin-top: 100px;
+.content3 .background3 .image1,
+.content3 .background3 .image2,
+.content3 .background3 .image3,
+.content3 .background3 .image4,
+.content3 .background3 .image5 {
+    position: static; /* Base position for mobile */
+    /* Individual margin adjustments for a staggered look on mobile/desktop */
+    margin-top: 0; 
     width:80%;
     height: 250px;
-    background-image: url(/images/tamarin.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+    cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
-.content3 .background3 .image2{
-    position: static;
-    margin-top: 50px;
-    width:90%;
-    height: 250px;
-    background-image: url(/images/lion.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+/* Specific margin overrides for mobile */
+.content3 .background3 .image1{ 
+    margin-top: 100px; 
+    width:80%; 
+    background-image: url(images/tamarin.png);
 }
-.content3 .background3 .image3{
-    position: static;
-    width:90%;
-    height: 250px;
-    background-image: url(/images/panther.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+.content3 .background3 .image2{ 
+    margin-top: 50px; 
+    width:90%; 
+    background-image: url(images/lion.jpg);
 }
-.content3 .background3 .image4{
-    position: static;
-    margin-top: 50px;
-    width:90%;
-    height: 250px;
-    background-image: url(/images/polarbear.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+.content3 .background3 .image3{ 
+    margin-top: 0px; 
+    width:90%; 
+    background-image: url(images/panther.jpg);
 }
-.content3 .background3 .image5{
-    position: static;
-    margin-top: 100px;
-    width:80%;
-    height: 250px;
-    background-image: url(/images/thar.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    transition: transform 0.2s ease-in-out;
+.content3 .background3 .image4{ 
+    margin-top: 50px; 
+    width:90%; 
+    background-image: url(images/polarbear.jpg);
 }
+.content3 .background3 .image5{ 
+    margin-top: 100px; 
+    width:80%; 
+    background-image: url(images/thar.jpg);
+}
+
 /* Hover effect for the images */
 
 .image1:hover,.image2:hover,.image3:hover,.image4:hover,.image5:hover{
@@ -443,31 +420,33 @@ body {
 /* Tablet styles for content3 */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .content3 .background3 .imagecontainer2 {
-        flex-direction: row;
+        flex-direction: row; /* Images in rows */
         flex-wrap: wrap;
         justify-content: center;
     }
     .content3 .background3 .imagecontainer2 > div {
-        width: 45%;
+        width: 45%; /* Each image takes up nearly half the width */
+        margin-top: 0 !important; /* Reset staggered margin for tablet row layout */
     }
 }
 
-/* Desktop styles for content3 */
+/* Desktop styles for content3 (staggered column layout) */
 @media screen and (min-width: 1024px) {
     .content3 .background3 .heading2 {
       font-size: 35px;
     }
     .content3 .background3 .imagecontainer2 {
-        flex-direction: row;
-        height: 600px;
+        flex-direction: row; /* Images in a single row */
+        height: 600px; /* Fixed height for staggered effect */
         justify-content: center;
         align-items: stretch;
     }
     .content3 .background3 .imagecontainer2 > div {
-        position: static;
-        flex: 1;
+        position: relative; /* Set position to relative to use 'top' for staggering */
+        flex: 1; /* Equal width for all columns */
         width: auto;
     }
+    /* Specific 'top' adjustments create the vertical staggering effect */
     .content3 .background3 .image1 { top: 100px; height: 350px; }
     .content3 .background3 .image2 { top: 60px; height: 450px; }
     .content3 .background3 .image3 { top: 20px; height: 550px; }
@@ -518,6 +497,7 @@ Uses CSS Grid for a responsive image gallery.*/
     /* The 10px gap between all grid items */
     gap: 10px;
 }
+/* Common style for gallery item (not strictly needed since image-item is used, but included) */
 .gallery-item {
   width: 100%;
   height: 100%;
@@ -576,17 +556,18 @@ Uses CSS Grid for a responsive image gallery.*/
         }
         
         /* Define your image URLs here. You can replace the placeholder URLs with your own. */
-        .img1 { background-image: url("/images/bird1.jpg"); }
-        .img2 { background-image: url("/images/polarbear2.jpg"); }
-        .img3 { background-image: url("/images/panther3.jpg"); }
-        .img4 { background-image: url("/images/thar4.jpg"); }
-        .img5 { background-image: url("/images/giraffe5.jpg"); }
-        .img6 { background-image: url("/images/bird6.jpg"); }
-        .img7 { background-image: url("/images/monkey7.jpg"); }
-        .img8 { background-image: url("/images/penguin8.jpg"); }
-        .img9 { background-image: url("/images/redpanda9.jpg"); }
-        .img10 { background-image: url("/images/hedge10.jpg"); }
-        .img11 { background-image: url("/images/husky11.jpg"); }
+        .img1 { background-image: url("images/bird1.jpg"); }
+        .img2 { background-image: url("images/polarbear2.jpg"); }
+        .img3 { background-image: url("images/panther3.jpg"); }
+        .img4 { background-image: url("images/thar4.jpg"); }
+        .img5 { background-image: url("images/giraffe5.jpg"); }
+        .img6 { background-image: url("images/bird6.jpg"); }
+        .img7 { background-image: url("images/monkey7.jpg"); }
+        .img8 { background-image: url("images/penguin8.jpg"); }
+        .img9 { background-image: url("images/redpanda9.jpg"); }
+        .img10 { background-image: url("images/hedge10.jpg"); }
+        .img11 { background-image: url("images/husky11.jpg"); }
+  /* Specific background-position overrides */
   .img5{
     background-position: top;
     background-size: cover;
@@ -607,7 +588,7 @@ Mobile-first styling for the form section with an image.*/
 
 .box-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack image and form vertically on mobile */
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -623,7 +604,7 @@ Mobile-first styling for the form section with an image.*/
     height: 300px;
     background-color: white;
     border-radius: 15px;
-    background-image:url(/images/tiger.jpg);
+    background-image:url(images/tiger.jpg);
     background-position: center;
     background-size: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -639,6 +620,7 @@ Mobile-first styling for the form section with an image.*/
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 .box-form .join-form{
+    /* Nested flexbox not explicitly used for column layout here, but padding adjusted */
     display: flex;
     justify-content:left;
     align-content: left;
@@ -651,7 +633,7 @@ Mobile-first styling for the form section with an image.*/
     font-size: 35px;
     font-family: 'Jua';
     font-weight: bold;
-    text-align:center;
+    text-align:center; /* Center on mobile */
     letter-spacing: 2px;
     color: #ffcc33;
     margin-bottom: 10px;
@@ -661,9 +643,10 @@ Mobile-first styling for the form section with an image.*/
 
 .name-contact-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack name and contact vertically on mobile */
     gap: 20px;
 }
+/* Input styles (full width on mobile) */
 .fullname{
     width: 100%;
     height: 40px;
@@ -686,7 +669,7 @@ Mobile-first styling for the form section with an image.*/
 }
 .email-location-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack email and location vertically on mobile */
     gap: 20px;
 }
 .email{
@@ -755,7 +738,7 @@ Mobile-first styling for the form section with an image.*/
 /* Tablet styles for join form */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .box-container {
-        flex-direction: row;
+        flex-direction: row; /* Image and form side-by-side */
         justify-content: center;
         align-items: center;
         gap: 20px;
@@ -763,16 +746,16 @@ Mobile-first styling for the form section with an image.*/
     .box-image {
         top: 0px;
         padding-top: 0px;
-        width: 45%;
+        width: 45%; /* Both take up roughly half the container */
         height: 600px;
     }
     .box-form {
         top: 0;
-        width: 45%;
+        width: 45%; /* Both take up roughly half the container */
         height: auto;
     }
     .name-contact-container, .email-location-container {
-        flex-direction: column;
+        flex-direction: column; /* Inputs remain stacked within their container on tablet */
     }
 }
 
@@ -792,14 +775,14 @@ Mobile-first styling for the form section with an image.*/
     }
     .join-form h3 {
         font-size: 35px;
-        text-align: left;
+        text-align: left; /* Align heading to the left on desktop */
     }
     .name-contact-container, .email-location-container {
-        flex-direction: row;
+        flex-direction: row; /* Inputs are side-by-side */
         gap: 20px;
     }
     .fullname, .contact-no, .email, .location {
-        width: 300px;
+        width: 300px; /* Fixed width for two-column input layout */
     }
 }
 
@@ -832,7 +815,7 @@ Uses CSS Grid for a video showcase.*/
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile/default */
   gap: 30px;
   margin:50px auto;
 }
@@ -847,173 +830,219 @@ Uses CSS Grid for a video showcase.*/
   transform: scale(1.03);
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
-/* Tablet styles for videos */
+/* Tablet styles for videos (remains 2 columns) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Desktop styles for videos */
+/* Desktop styles for videos (remains 2 columns but with fixed video size) */
 @media screen and (min-width: 1024px) {
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
+        /* If a fixed width is applied to the video elements, the grid should also be centered
+           or allowed to shrink-to-fit its content */
     }
     .video-item video {
-        width: 550px;
+        width: 550px; /* Fixed width for a large video player */
         height:300px;
     }
 }
-
-/*FOOTER STYLES
- Sets up the footer section with contact information and social links.*/
-.content7{
-    background-color: #201f1f;
-    background-image: url(/images/zebras.jpg);
+/* ===== CONTENT7 (Zebra Background Section with Footer at Bottom) ===== */
+.content7 {
+    position: relative;
+    width: 100%;
+    height: 600px; /* fixed desktop height */
+    background-image: url("images/zebras.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 700px;
-    margin: 0 auto;
-    position: relative;
+    justify-content: flex-end; /* footer sits at bottom */
+    overflow: hidden;
 }
-/* Container for the footer content, positioned at the bottom */
 
-.footer-container{
-    position:absolute;
-    bottom: 0;
-    left: 0;
+/* ===== FOOTER (Transparent Black with Blur) ===== */
+footer {
     width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: url(/images/blacksky.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-family: 'Kameron', sans-serif;
 }
-/* Flexbox container for the different columns in the footer */
 
-.contact-section{
+/* Footer layout container */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contact + Social + Services + About layout */
+.contact-section {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    gap: 30px;
-    line-height: 30px;
-    margin-bottom: 20px;
+    text-align: center; /* Center-aligned content on mobile/default */
+    gap: 20px;
 }
-.column-1, .column-2, .column-3, .column-4 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Kameron';
-    letter-spacing: 3px;
-    font-size: 18px;
-    padding: 20px;
+
+/* Styling for the four columns (mobile default is to stack or wrap) */
+.column-1,
+.column-2,
+.column-3,
+.column-4 {
+    flex: 1 1 220px; /* Allows columns to grow and shrink, with a base width of 220px */
+    min-width: 180px;
+    font-size: 20px;
+    letter-spacing: 2px;
 }
-.column-1 {
-    text-align: left;
-    align-items: flex-start; 
+.column-1 * {
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
-.contact, .follow, .services, .about {
-    font-family: 'Kameron';
-    font-size: 25px;
+
+/* Styling for column headings */
+.contact,
+.follow,
+.services,
+.about {
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #ffcc33;
+    padding-right: 20px;
+    color: #ffcc33; /* Golden yellow headings */
 }
-/* Styles for the social media icons */
 
+/* Social links */
 .social-icons {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack icons vertically on mobile */
     gap: 10px;
-    margin-top: 10px;
-    align-items: flex-start;
 }
 
 .social-icons a {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .social-icons a i {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .social-icons a:hover {
     color: #ffcc33;
 }
-/* Styles for the copyright text */
 
-.footer{
-    font-family: 'Kameron';
+/* Footer bottom text */
+.footer {
     text-align: center;
-    width: 100%;
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 14px;
-    color: #ccc;
+    color: #d4d3d3;
 }
-/* Media queries for footer layout on larger screens */
 
-@media screen and (min-width: 768px) {
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* === Tablet View (768px–1024px): 2 columns per row === */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .content7 {
+        height: 500px; /* slightly smaller height for tablets */
+        background-position: center bottom;
+    }
+
+    footer {
+        padding: 30px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+    }
+
     .contact-section {
-        flex-direction: row;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+        gap: 25px 40px;
+        text-align: left; /* Align text to the left for better reading on tablet */
+        justify-items: center;
+    }
+
+    .column-1,
+    .column-2,
+    .column-3,
+    .column-4 {
+        flex: unset;
+        min-width: auto;
+    }
+}
+
+/* === Mobile View (≤767px): stack vertically === */
+@media screen and (max-width: 767px) {
+    .content7 {
+        height: auto;
+        min-height: 450px;
+        background-position: center;
+    }
+
+    footer {
+        padding: 25px 10px;
+        background-color: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(5px);
+    }
+
+    .contact-section {
+        flex-direction: column; /* Stack all columns vertically */
+        align-items: center;
         text-align: center;
+        gap: 20px;
     }
-    .column-2, .column-3, .column-4 {
-        align-items: center;
+
+    .column-1,
+    .column-2,
+    .column-3,
+    .column-4 {
+        width: 100%;
     }
-    .social-icons {
-        align-items: flex-start;
+
+    .social-icons a {
+        justify-content: center;
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-size: 13px;
     }
 }
-@media screen and (min-width: 1024px) {
-    .contact-section {
-        flex-direction: row;
-        justify-content: space-around;
-        text-align:center;
+
+/* === Extra Small Devices (≤480px): tighter spacing === */
+@media screen and (max-width: 480px) {
+    .content7 {
+        min-height: 400px;
     }
-    .column-2, .column-3, .column-4 {
-        align-items: center;
+
+    .contact,
+    .follow,
+    .services,
+    .about {
+        font-size: 18px;
+    }
+
+    .social-icons a i {
+        font-size: 20px;
+    }
+
+    footer {
+        padding: 20px 8px;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
     }
 }
-
-
-
-/* Ensures full width for specific sections */
-#about-section {
-  width: 100%;   /* forces full page width */
-  max-width: 100%; 
-  margin: 0 auto; /* centers content if needed */
-}
-#gallery-section {
-  width: 100%;   /* forces full page width */
-  max-width: 100%; 
-  margin: 0 auto; /* centers content if needed */
-}
-#join-section {
-  width: 100%;   /* forces full page width */
-  max-width: 100%; 
-  margin: 0 auto; /* centers content if needed */
-
-}
- 
-
-
-
-
-
