@@ -987,6 +987,9 @@ footer {
 
 /* === Mobile View (≤767px): stack vertically === */
 @media screen and (max-width: 767px) {
+    .navbar{
+        position:relative;
+    }
     .content7 {
         height: auto;
         min-height: 450px;
@@ -1025,6 +1028,9 @@ footer {
 
 /* === Extra Small Devices (≤480px): tighter spacing === */
 @media screen and (max-width: 480px) {
+    .navbar{
+        position: relative;
+    }
     .content7 {
         min-height: 400px;
     }

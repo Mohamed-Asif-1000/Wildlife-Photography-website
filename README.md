@@ -64,7 +64,7 @@ This is a responsive wildlife-themed website designed to showcase animals throug
 1.Clone the repository:
 ```bash
 
-git clone https://github.com/yourusername/wildlife-website.git
+git clone https://github.com/Mohamed-Asif-1000/Wildlife-Photography-website.git
 
 ```
 
@@ -116,7 +116,8 @@ Full credit goes to the respective photographers and creators for sharing their 
 
 ## 👤 Author
 
-Mohamed Asif A
+**Mohamed Asif A**
 
 
-Wildlife Enthusiast & Front-End Developer
+🌿Wildlife Enthusiast & Front-End Developer
+🔗 [www.linkedin.com/in/mohamed-asif-a-14162326atm]
